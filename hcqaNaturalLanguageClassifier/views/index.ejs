@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HealthCare Q and A</title>
+		<link rel='stylesheet' href='/stylesheets/style.css' />
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <style>
+    .modal-dialog{
+        position: relative;
+        display: table; //This is important 
+        overflow-y: auto;    
+        overflow-x: auto;
+        width: auto;
+        
+    }
+   </style>
+	<script type="text/javascript">
+	//A function for sending data to the server through an AJAX request
+	function classify() {
+	 var xhr = new XMLHttpRequest();
+	 xhr.onreadystatechange = function() {
+	 if (xhr.readyState == 4) {
+	 if (xhr.status == 200) {
+	 var json = JSON.parse(xhr.responseText);
+	 document.getElementById("result").innerHTML = json.top_class;
+	 document.getElementById("submitButton2").setAttribute("data-target", "#" + json.top_class);
+	 document.getElementById("submitButton2").click();
+	 }
+	 }
+	 }
+	 xhr.open("POST", "./nlc", true);
+	 xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	 xhr.send("source=" + document.getElementById("source").value);
+	 }
+	 //A simple function for resetting or clearing values in the page
+	 function clearData() {
+	 document.getElementById("source").value = "";
+	 document.getElementById("result").innerHTML = "";
+	 }
+	 
+	 </script>
+  </head>
+  <body>
+		<p/>
+		<div><b>Heatlthcare Q and A Application</b></div>
+		<p/>
+	<div>Enter <i>question</i> to be answered.</div>
+	<!-- A simple text area to accept input from the user -->
+	<p/>
+<div><textarea id="source" name="source" rows="10" cols="75"></textarea></div>
+  <p/>
+  <!-- Modal for Policy Class -->
+        <div id="Policy" class="modal fade" role="dialog" style="z-index:999999999;">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">×</button>
+                        <h3 class="modal-title">Policies and Plans</h3>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container-fluid">
+	<h4>1. Group Life & Medical Plans</h4>
+<p>Like all well run companies, yours will rely on your people to succeed. It's therefore crucial to offer the best benefits package you can, to attract talented people and to retain a motivated workforce. It’s also worth remembering that many employees today see these benefits as a key consideration when assessing the employment market</p>
+<p class="calltoaction"><a href="/en/Business/Find-our-products/Group-Life--Medical-Plans/index.html" class="calltoactionlink">Learn more about our Group Life and Medical plans</a></p>
+<h4>2. Have your circumstances changed? <strong>&nbsp;</strong></h4>
+<p>We want to make sure that you always have the right protection for your circumstances. If things change &ndash; for example, you may start a family, move jobs or emigrate &ndash; this could seriously affect the amount or type of protection you need.&nbsp;</p>
+<p>So if anything changes, just call us on <strong>19798</strong> (from outside Egypt +202 2 461 9020) so we can make sure you&rsquo;re still receiving the right level of protection.</p>
+<h4>5. List of required documents for any change in your policy? <strong>&nbsp;</strong></h4>
+<p>Here is our required document for any change in your policy.</p>
+<p>&bull; <a href="/en/home/assets/pdf/required-documents-for-policy-changes1.pdf">Required documents for policy changes.</a></p>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+<!-- Modal for Providers Class-->
+        <div id="Providers" class="modal fade" role="dialog" style="z-index:999999999;">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">×</button>
+                        <h3 class="modal-title">Medical Providers</h3>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                             <h2>List of approved medical providers</h2>
+<p>Here is our latest list of approved medical providers:&nbsp;</p>
+<p><a href="english_network-update_mid-dec2016.pdf" target="_blank">Catalog</a></p>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-info" data-dismiss="modal" >Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+		
+		     <!-- Modal for About Class -->
+        <div id="About" class="modal fade" role="dialog" style="z-index:999999999;">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">×</button>
+                        <h3 class="modal-title">About</h3>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <div id="mainPanel">
+        <h1>Who We Are</h1>
+        <p></p>
+<p>A Healthcare insurance community.</p>
+<p>Over the past years, our accomplishments proved our capabilities in offering and distributing insurance plans &amp; services for healthcare insurance</p>
+    </div>
+<div class="note green">
+    <h3>Have a question?</h3>
+    
+<p><span style="font-size: medium;">Call our hot line 19097&nbsp;</span><span style="font-size: medium;">which is operating 24 hours&nbsp;</span><span style="font-size: medium;">7 days a week for&nbsp; medical &nbsp;claims,&nbsp;</span><span style="font-size: medium;">medical network or medical&nbsp;</span><span style="font-size: medium;">pre-approvals</span></p>
+<p><span style="font-size: medium;"><b>Or&nbsp;</b></span></p>
+<p><span style="font-size: medium;">Call our short number&nbsp;</span><span style="font-size: medium;">19798 for individual policies, which is operating&nbsp;</span><span style="font-size: medium;">from 8:00am to 5:00pm&nbsp;</span><span style="font-size: medium;">from Sunday to Thursday</span></p>
+<p><strong><span style="font-size: medium;">Or</span></strong></p>
+<p><span style="font-size: medium;"> just fill up our <strong>"<a href="/en/Business/Who-We-Are/Locally/Contact-Us.html">Contact us</a>"</strong> form and we will call you</span></p>
+</div>
+<div class="note orange">
+    <h3>Need to find our offices?</h3>
+    <p><span style=" font-size: large;">Just <a href="/en/Business/Who-We-Are/Locally/Find-our-offices.html">click here</a></span></p>
+</div>	
+
+ <h3>Need Support?</h3>
+<p>Check the Member's Guidebook to know more on "How to use our Medical Services":</p>
+<ul>
+<li><a href="/en/home/assets/pdf/member-book-arabic.pdf">Arabic Version</a></li>
+<li><a href="/en/home/assets/pdf/member-book-english.pdf">English Version</a><a href="/en/home/assets/pdf/member-book-arabic.pdf"></a></li>
+</ul>						 
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+		  <!-- Modal for Claim Class-->
+        <div id="Claim" class="modal fade" role="dialog" style="z-index:999999999;">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">×</button>
+                        <h3 class="modal-title">Claiming</h3>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container-fluid">
+      <h4>1. Pay your Premium easily &nbsp;</h4>
+<p>We often hear from our customers that they would like to have a choice on when and how to pay a premium. So, we have prepared a wide variety of options for you to choose from. You can decide whether you pay your premiums:&nbsp;</p>
+<ul>
+<li>quarterly</li>
+<li>semi-annually</li>
+<li>annually</li>
+</ul>
+<p><br>You can also choose from a variety of dates on which your payment can be made. And finally, for even more flexibility, we offer several options of how to make your payment:&nbsp;</p>
+<ul>
+<li>Credit Card Payment&nbsp;&ndash; (On specific plans/policies)</li>
+<li>Bank Transfer &ndash; Standing Order&nbsp;</li>
+<li>Bank Cheque&nbsp;</li>
+</ul>
+<h4>2. Missed a payment? Here&rsquo;s how to reactivate your Policy</h4>
+<p>If you missed a payment and are worried about your policy being invalid contact us as soon as possible. In most cases we can simply re-activate your plan, with no loss of cover.</p>
+<div id="sideNavBox">
+    <ul><li><a href="/en/Business/Support-Centre/Make-a-claim.html">Make a Claim</a></li><li><a href="/en/Business/Support-Centre/Find-a-form.html">Find a Form</a></li></ul>
+</div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+		<!-- Modal for Products Class -->
+        <div id="Products" class="modal fade" role="dialog" style="z-index:999999999;">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">×</button>
+                        <h3 class="modal-title">Products, Offers and Palns</h3>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <div id="mainPanel">
+        <h3><a href="/en/Business/Find-our-products/Group-Life--Medical-Plans/Group-Life--Disability-Plans.html">Group Life and Disability</a></h3>
+                        	
+		                        <p class="greyParagraph">A menu of features to help you create the group life and disability solution that best suits your employees</p>
+						        <ul>
+<li>Customised packages for organisations with over 10 employees</li>
+
+<li>Choose from a wide range of life and disability benefits to create a package that suits your organisation and employee's needs</li>
+
+<li>Offer additional facilities such as Supplementary Life Cover, Voluntary Life Cover & Dependant’s Life Cover</li>
+</ul>
+						  	
+				 	        <div class="linkAndArrow">
+				 	            
+						        <a href="/en/Business/Find-our-products/Group-Life--Medical-Plans/Group-Life--Disability-Plans.html">Read More</a>
+                    	        <a class="buttonRead" href="/en/Business/Find-our-products/Group-Life--Medical-Plans/Group-Life--Disability-Plans.html"></a>
+					        </div>
+				        </div>
+						 <h3><a href="/en/Business/Find-our-products/Group-Life--Medical-Plans/Group-Medical-Plans.html">Group Medical Plans</a></h3>
+                        	
+		                        <p class="greyParagraph">A competitively priced group medical plan delivered through a wide network of medical providers easily accessible to your employees</p>
+						        <ul>
+<li>Customised packages for organisations with over 10 employees</li>
+<li>Choose from a wide range of in-patient, out-patient and additional benefits to create a package that suits your organisaion and employee's needs</li>
+<li>Backed by MetLife's efficient claims process</li>
+</ul>
+						  	
+				 	        <div class="linkAndArrow">
+				 	            
+						        <a href="/en/Business/Find-our-products/Group-Life--Medical-Plans/Group-Medical-Plans.html">Read More</a>
+                    	        <a class="buttonRead" href="/en/Business/Find-our-products/Group-Life--Medical-Plans/Group-Medical-Plans.html"></a>
+					        </div>
+
+	                        <h3><a href="/en/Business/Find-our-products/Group-Life--Medical-Plans/Medium-Package-Plan.html">Medium Package Plan</a></h3>
+                        	
+		                        <p class="greyParagraph">A pre-packaged group life and medical solution for medium sized organisations</p>
+						        <ul>
+<li>Best suited for small organisations with 21-200 employees</li>
+
+<li>Three pre-built packages containing group life and group medical benefits</li>
+
+<li>Varying geographical coverage to suit the needs of your organisation</li>
+</ul>
+						  	
+				 	        <div class="linkAndArrow">
+				 	            
+						        <a href="/en/Business/Find-our-products/Group-Life--Medical-Plans/Medium-Package-Plan.html">Read More</a>
+                    	        <a class="buttonRead" href="/en/Business/Find-our-products/Group-Life--Medical-Plans/Medium-Package-Plan.html"></a>
+					        </div>
+				        
+	                        <h3><a href="/en/Business/Find-our-products/Group-Life--Medical-Plans/Small-Package-Plan.html">Small Package Plan</a></h3>
+                        	
+		                        <p class="greyParagraph">A pre-packaged group life and medical solution for small organisations</p>
+						        <ul>
+<li>Best suited for small organisations with 5-21 employees</li>
+
+<li>Four pre-built packages containing group life and group medical benefits</li>
+
+<li>Varying geographical coverage to suit the needs of your organisation</li>
+</ul>
+						  	
+				 	        <div class="linkAndArrow">
+				 	            
+						        <a href="/en/Business/Find-our-products/Group-Life--Medical-Plans/Small-Package-Plan.html">Read More</a>
+                    	        <a class="buttonRead" href="/en/Business/Find-our-products/Group-Life--Medical-Plans/Small-Package-Plan.html"></a>
+					        </div>						 
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Buttons for invoking the JavaScript functions classify() and clearData() -->
+	<div>	
+   <button id="submitButton" onclick="classify()" type="button" class="btn btn-info">Submit</button>
+   <button id="submitButton2" type="button" data-toggle="modal" style= "display:none"></button>
+  <button onclick="clearData()" type="button" class="btn btn-info" data-toggle="modal" >Clear</button>
+  </div>
+   <div><b>Result:</b> <span id="result"></span></div>
+  </body>
+</html>
